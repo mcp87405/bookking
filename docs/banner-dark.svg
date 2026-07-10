@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Bookking  a self-hosted book of accounts">
+  <defs>
+    <pattern id="ledger-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#2A2722" stroke-width="0.75"/>
+    </pattern>
+    <linearGradient id="ink-wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F1C18"/>
+      <stop offset="100%" stop-color="#141210"/>
+    </linearGradient>
+    <clipPath id="chart-clip">
+      <rect x="720" y="56" width="420" height="208" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#ink-wash)"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" fill="none" stroke="#3D3830"/>
+  <rect width="1200" height="320" fill="url(#ledger-grid)" opacity="0.35"/>
+  <rect x="0" y="0" width="6" height="320" fill="#D4924F"/>
+
+  <g transform="translate(72, 78)">
+    <line x1="0" y1="0" x2="88" y2="0" stroke="#F7F4EF" stroke-width="2.5"/>
+    <line x1="0" y1="7" x2="88" y2="7" stroke="#F7F4EF" stroke-width="2.5"/>
+    <text x="0" y="62" fill="#F7F4EF" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="500" letter-spacing="-0.5">Bookking</text>
+    <line x1="0" y1="82" x2="340" y2="82" stroke="#D4924F" stroke-width="1.5"/>
+    <text x="0" y="118" fill="#B8AFA0" font-family="Georgia, serif" font-size="22" font-style="italic">A self-hosted book of accounts</text>
+    <text x="0" y="158" fill="#7A7268" font-family="'Courier New', monospace" font-size="13" letter-spacing="0.12em">INCOME · EXPENSE · PROFILES · MULTI-CURRENCY</text>
+  </g>
+
+  <line x1="680" y1="40" x2="680" y2="280" stroke="#3D3830"/>
+
+  <g clip-path="url(#chart-clip)">
+    <line x1="720" y1="168" x2="1120" y2="168" stroke="#4A443C"/>
+    <rect x="748" y="118" width="22" height="50" fill="#D4924F"/>
+    <rect x="792" y="98" width="22" height="70" fill="#D4924F"/>
+    <rect x="836" y="128" width="22" height="40" fill="#B87333"/>
+    <rect x="880" y="108" width="22" height="60" fill="#D4924F"/>
+    <rect x="924" y="138" width="22" height="30" fill="#D4924F"/>
+    <rect x="968" y="88" width="22" height="80" fill="#B87333"/>
+    <rect x="1012" y="118" width="22" height="50" fill="#D4924F"/>
+    <rect x="1056" y="103" width="22" height="65" fill="#D4924F"/>
+    <rect x="748" y="168" width="22" height="42" fill="#6B8AA3"/>
+    <rect x="792" y="168" width="22" height="58" fill="#5A7A94"/>
+    <rect x="836" y="168" width="22" height="28" fill="#6B8AA3"/>
+    <rect x="880" y="168" width="22" height="48" fill="#5A7A94"/>
+    <rect x="924" y="168" width="22" height="36" fill="#6B8AA3"/>
+    <rect x="968" y="168" width="22" height="62" fill="#5A7A94"/>
+    <rect x="1012" y="168" width="22" height="32" fill="#6B8AA3"/>
+    <rect x="1056" y="168" width="22" height="44" fill="#5A7A94"/>
+    <path d="M 760 72 C 820 72, 860 92, 900 108" fill="none" stroke="#D4924F" stroke-width="10" stroke-opacity="0.18"/>
+    <path d="M 804 72 C 860 72, 900 88, 944 108" fill="none" stroke="#8FA88E" stroke-width="8" stroke-opacity="0.2"/>
+    <path d="M 900 228 C 940 228, 980 210, 1020 196" fill="none" stroke="#6B8AA3" stroke-width="10" stroke-opacity="0.16"/>
+    <text x="748" y="248" fill="#B8AFA0" font-family="'Courier New', monospace" font-size="11">+ 4,802</text>
+    <text x="880" y="248" fill="#B8AFA0" font-family="'Courier New', monospace" font-size="11"> 3,891</text>
+    <text x="1012" y="248" fill="#D4924F" font-family="'Courier New', monospace" font-size="11" font-weight="bold">H 911</text>
+    <text x="748" y="68" fill="#7A7268" font-family="Georgia, serif" font-size="12" font-style="italic">Cash flow</text>
+  </g>
+
+  <rect x="0" y="292" width="1200" height="28" fill="#F7F4EF" opacity="0.03"/>
+  <text x="600" y="311" text-anchor="middle" fill="#7A7268" font-family="'Courier New', monospace" font-size="11" letter-spacing="0.18em">YOUR MACHINE · YOUR DATA · NO ACCOUNT</text>
+</svg>

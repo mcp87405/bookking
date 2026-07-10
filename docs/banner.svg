@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Bookking  a self-hosted book of accounts">
+  <defs>
+    <pattern id="ledger-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#E3DDD2" stroke-width="0.75"/>
+    </pattern>
+    <linearGradient id="parchment-wash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FCFBF8"/>
+      <stop offset="100%" stop-color="#F1EDE5"/>
+    </linearGradient>
+    <clipPath id="chart-clip">
+      <rect x="720" y="56" width="420" height="208" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <!-- panel -->
+  <rect width="1200" height="320" fill="url(#parchment-wash)"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" fill="none" stroke="#C9C1B2" stroke-width="1"/>
+  <rect width="1200" height="320" fill="url(#ledger-grid)" opacity="0.45"/>
+
+  <!-- left accent bar -->
+  <rect x="0" y="0" width="6" height="320" fill="#B87333"/>
+
+  <!-- wordmark block -->
+  <g transform="translate(72, 78)">
+    <!-- double rule (ledger mark) -->
+    <line x1="0" y1="0" x2="88" y2="0" stroke="#1A1814" stroke-width="2.5"/>
+    <line x1="0" y1="7" x2="88" y2="7" stroke="#1A1814" stroke-width="2.5"/>
+
+    <text
+      x="0"
+      y="62"
+      fill="#1A1814"
+      font-family="Georgia, 'Times New Roman', 'Palatino Linotype', serif"
+      font-size="56"
+      font-weight="500"
+      letter-spacing="-0.5"
+    >Bookking</text>
+
+  <line x1="0" y1="82" x2="340" y2="82" stroke="#B87333" stroke-width="1.5"/>
+
+    <text
+      x="0"
+      y="118"
+      fill="#6E675C"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="22"
+      font-style="italic"
+      letter-spacing="0.2"
+    >A self-hosted book of accounts</text>
+
+    <text
+      x="0"
+      y="158"
+      fill="#9A917F"
+      font-family="'Courier New', Courier, monospace"
+      font-size="13"
+      letter-spacing="0.12em"
+    >INCOME · EXPENSE · PROFILES · MULTI-CURRENCY</text>
+  </g>
+
+  <!-- vertical rule -->
+  <line x1="680" y1="40" x2="680" y2="280" stroke="#E3DDD2" stroke-width="1"/>
+
+  <!-- abstract cash-flow + sankey motif -->
+  <g clip-path="url(#chart-clip)">
+    <!-- baseline -->
+    <line x1="720" y1="168" x2="1120" y2="168" stroke="#C9C1B2" stroke-width="1"/>
+
+    <!-- income bars (copper, above line) -->
+    <rect x="748" y="118" width="22" height="50" fill="#B87333"/>
+    <rect x="792" y="98" width="22" height="70" fill="#B87333"/>
+    <rect x="836" y="128" width="22" height="40" fill="#96591F"/>
+    <rect x="880" y="108" width="22" height="60" fill="#B87333"/>
+    <rect x="924" y="138" width="22" height="30" fill="#B87333"/>
+    <rect x="968" y="88" width="22" height="80" fill="#96591F"/>
+    <rect x="1012" y="118" width="22" height="50" fill="#B87333"/>
+    <rect x="1056" y="103" width="22" height="65" fill="#B87333"/>
+
+    <!-- expense bars (slate, below line) -->
+    <rect x="748" y="168" width="22" height="42" fill="#2C3E50"/>
+    <rect x="792" y="168" width="22" height="58" fill="#2C3E50"/>
+    <rect x="836" y="168" width="22" height="28" fill="#4E6E81"/>
+    <rect x="880" y="168" width="22" height="48" fill="#2C3E50"/>
+    <rect x="924" y="168" width="22" height="36" fill="#2C3E50"/>
+    <rect x="968" y="168" width="22" height="62" fill="#4E6E81"/>
+    <rect x="1012" y="168" width="22" height="32" fill="#2C3E50"/>
+    <rect x="1056" y="168" width="22" height="44" fill="#2C3E50"/>
+
+    <!-- sankey ribbons -->
+    <path d="M 760 72 C 820 72, 860 92, 900 108" fill="none" stroke="#B87333" stroke-width="10" stroke-opacity="0.22"/>
+    <path d="M 804 72 C 860 72, 900 88, 944 108" fill="none" stroke="#6B7F6A" stroke-width="8" stroke-opacity="0.25"/>
+    <path d="M 900 228 C 940 228, 980 210, 1020 196" fill="none" stroke="#2C3E50" stroke-width="10" stroke-opacity="0.2"/>
+    <path d="M 944 228 C 980 228, 1010 214, 1044 200" fill="none" stroke="#8C6D9E" stroke-width="7" stroke-opacity="0.18"/>
+
+    <!-- sample figures (tabular feel) -->
+    <text x="748" y="248" fill="#6E675C" font-family="'Courier New', monospace" font-size="11">+ 4,802</text>
+    <text x="880" y="248" fill="#6E675C" font-family="'Courier New', monospace" font-size="11"> 3,891</text>
+    <text x="1012" y="248" fill="#96591F" font-family="'Courier New', monospace" font-size="11" font-weight="bold">H 911</text>
+
+    <text x="748" y="68" fill="#9A917F" font-family="Georgia, serif" font-size="12" font-style="italic">Cash flow</text>
+  </g>
+
+  <!-- footer strip -->
+  <rect x="0" y="292" width="1200" height="28" fill="#1A1814" opacity="0.04"/>
+  <text
+    x="600"
+    y="311"
+    text-anchor="middle"
+    fill="#9A917F"
+    font-family="'Courier New', monospace"
+    font-size="11"
+    letter-spacing="0.18em"
+  >YOUR MACHINE · YOUR DATA · NO ACCOUNT</text>
+</svg>
