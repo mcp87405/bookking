@@ -76,7 +76,39 @@ Optional: copy `.env.example` to `.env` to change the database password, FX API
 endpoint, or default display currency. You can also change the display currency later
 in the app under Settings.
 
-To wipe all data and start fresh:
+## Data persistence, stopping, and upgrades
+
+Your ledger lives in a Docker named volume (`db-data`), not inside the containers.
+Entries, profiles, settings, and cached exchange rates survive container restarts and
+system reboots. The stack is configured with `restart: unless-stopped`, so it comes
+back when Docker starts.
+
+**Safe shutdown** — stops containers but keeps your data:
+
+```bash
+docker compose down
+```
+
+**Upgrade to a newer release** — pulls a new app image without touching the database:
+
+```bash
+cd bookking
+git pull
+docker compose pull app          # or: docker compose pull
+docker compose up -d
+```
+
+To pin a specific version instead of `latest`:
+
+```bash
+BOOKKING_VERSION=v1.0.1 docker compose pull app
+BOOKKING_VERSION=v1.0.1 docker compose up -d
+```
+
+Export CSV or JSON from Settings first if you want a backup before upgrading.
+
+**Wipe all data and start fresh** — only use this when you mean to delete everything.
+The `-v` flag removes the database volume:
 
 ```bash
 docker compose down -v && docker compose up -d
