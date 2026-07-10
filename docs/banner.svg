@@ -35,12 +35,12 @@
       letter-spacing="-0.5"
     >
       <tspan font-size="56">Book</tspan>
-      <tspan font-size="76" font-weight="600" dx="6">K</tspan>
-      <tspan font-size="56" dx="4">&#305;</tspan>
+      <tspan font-size="56" dx="2">K</tspan>
+      <tspan font-size="56" dx="2">&#305;</tspan>
       <tspan font-size="56">ng</tspan>
     </text>
     <!-- crown as the dot on the i -->
-    <g transform="translate(248, 18)" fill="#B87333">
+    <g transform="translate(196, 18)" fill="#B87333">
       <path d="M0 14h22v2.5H0V14zm1.5-2.5 2.8-7 3.5 4.2L11 3.5l3.2 4.7 3.5-4.2 2.8 7H1.5z"/>
     </g>
 
